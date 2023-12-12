@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courts List</title>
+</head>
+<body>
+    <h1>Courts</h1>
+    <ul>
+        {% for court in courts %}
+            <li>
+                <a href="{% url 'court-detail' court.id %}">{{ court.name }}</a> - 
+                Type: {{ court.get_court_type_display }}, City: {{ court.city }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
